@@ -58,6 +58,25 @@ CREATE TABLE `article_tag` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- data
+NSERT INTO `article_tag` (`id`, `article_id`, `tag_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, NULL, NULL),
+(2, 1, 2, NULL, NULL),
+(3, 1, 3, NULL, NULL),
+
+
+CREATE TABLE `tags` (
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- data
+INSERT INTO `tags` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
+(1, 'AI', 'ai', '2025-10-21 20:02:25', '2025-10-21 20:02:25'),
+(2, 'Machine Learning', 'machine-learning', '2025-10-21 20:02:25', '2025-10-21 20:02:25'),
+(3, 'Web Development', 'web-development', '2025-10-21 20:02:25', '2025-10-21 20:02:25'),
 
 ALTER TABLE `article_tag`
   ADD PRIMARY KEY (`id`),
